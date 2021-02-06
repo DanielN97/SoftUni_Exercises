@@ -7,13 +7,13 @@ namespace _2._Squares_in_Matrix
     {
         static void Main(string[] args)
         {
-            int[] dimentions = Console.ReadLine().Split().Select(int.Parse).ToArray();
+            int[] sizeOfMatrix = Console.ReadLine().Split().Select(int.Parse).ToArray();
 
-            char[,] matrix = new char[dimentions[0], dimentions[1]];
+            char[,] matrix = new char[sizeOfMatrix[0], sizeOfMatrix[1]];
 
             for (int row = 0; row < matrix.GetLength(0); row++)
             {
-                char[] rowData = Console.ReadLine().Split(' ', StringSplitOptions.RemoveEmptyEntries).Select(char.Parse).ToArray();
+                char[] rowData = Console.ReadLine().Split(" ", StringSplitOptions.RemoveEmptyEntries).Select(char.Parse).ToArray();
 
                 for (int col = 0; col < matrix.GetLength(1); col++)
                 {
@@ -21,22 +21,20 @@ namespace _2._Squares_in_Matrix
                 }
             }
 
-            int count = 0;
+            int counter = 0;
 
             for (int row = 0; row < matrix.GetLength(0) - 1; row++)
             {
                 for (int col = 0; col < matrix.GetLength(1) - 1; col++)
                 {
-                    char currentChar = matrix[row, col];
-
-                    if (matrix[row + 1, col] == currentChar && matrix[row, col + 1] == currentChar && matrix[row + 1, col + 1] == currentChar)
+                    if (matrix[row, col] == matrix[row + 1, col] && matrix[row, col] == matrix[row, col + 1] && matrix[row, col] == matrix[row + 1, col + 1])
                     {
-                        count++;
+                        counter++;
                     }
                 }
             }
 
-            Console.WriteLine(count);
+            Console.WriteLine(counter);
         }
     }
 }

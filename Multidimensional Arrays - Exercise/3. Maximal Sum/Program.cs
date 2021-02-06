@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 
 namespace _3._Maximal_Sum
@@ -8,13 +7,13 @@ namespace _3._Maximal_Sum
     {
         static void Main(string[] args)
         {
-            int[] dimentions = Console.ReadLine().Split().Select(int.Parse).ToArray();
+            int[] sizeOfMatrix = Console.ReadLine().Split(" ", StringSplitOptions.RemoveEmptyEntries).Select(int.Parse).ToArray();
 
-            int[,] matrix = new int[dimentions[0], dimentions[1]];
+            int[,] matrix = new int[sizeOfMatrix[0], sizeOfMatrix[1]];
 
             for (int row = 0; row < matrix.GetLength(0); row++)
             {
-                int[] rowData = Console.ReadLine().Split(' ', StringSplitOptions.RemoveEmptyEntries).Select(int.Parse).ToArray();
+                int[] rowData = Console.ReadLine().Split(" ", StringSplitOptions.RemoveEmptyEntries).Select(int.Parse).ToArray();
 
                 for (int col = 0; col < matrix.GetLength(1); col++)
                 {
@@ -23,53 +22,39 @@ namespace _3._Maximal_Sum
             }
 
             int bestSum = 0;
-            int[] bestIndex = new int[2];
-            int[,] bestMatrix = new int[3, 3];
+            int bestRow = 0;
+            int bestCol = 0;
 
-            if (dimentions[0] > 2 && dimentions[1] > 2)
+            for (int row = 0; row < matrix.GetLength(0) - 2; row++)
             {
-                for (int row = 0; row < matrix.GetLength(0) - 2; row++)
+                for (int col = 0; col < matrix.GetLength(1) - 2; col++)
                 {
-                    for (int col = 0; col < matrix.GetLength(1) - 2; col++)
+                    int sum = 0;
+                    int currentRow = row;
+                    int currentCol = col;
+
+                    for (int i = row; i < row + 3; i++)
                     {
-                        int currentSum = 0;
-
-                        for (int i = row; i < row + 3; i++)
+                        for (int j = col; j < col + 3; j++)
                         {
-                            for (int j = col; j < col + 3; j++)
-                            {
-                                currentSum += matrix[i, j];
-                            }
-                        }
-
-                        if (currentSum > bestSum)
-                        {
-                            bestSum = currentSum;
-                            bestIndex[0] = row;
-                            bestIndex[1] = col;
+                            sum += matrix[i, j];
                         }
                     }
-                }
 
-                for (int row = 0; row < bestMatrix.GetLength(0); row++)
-                {
-                    for (int col = 0; col < bestMatrix.GetLength(1); col++)
+                    if (sum > bestSum)
                     {
-                        bestMatrix[row, col] = matrix[bestIndex[0] + row, bestIndex[1] + col];
+                        bestSum = sum;
+                        bestRow = currentRow;
+                        bestCol = bestCol;
                     }
                 }
+            }
 
-                Console.WriteLine($"Sum = {bestSum}");
+            Console.WriteLine($"Sum = {bestSum}");
 
-                for (int row = 0; row < bestMatrix.GetLength(0); row++)
-                {
-                    for (int col = 0; col < bestMatrix.GetLength(1) - 1; col++)
-                    {
-                        Console.Write(bestMatrix[row, col] + " ");
-                    }
-                    Console.Write(bestMatrix[row, bestMatrix.GetLength(1) - 1]);
-                    Console.WriteLine();
-                }
+            for (int row = bestRow; row < bestRow + 3; row++)
+            {
+                Console.WriteLine(matrix[row, bestCol] + " " + matrix[row, bestCol + 1] + " " + matrix[row, bestCol + 2]);
             }
         }
     }

@@ -7,12 +7,9 @@ namespace _1._Diagonal_Difference
     {
         static void Main(string[] args)
         {
-            int n = int.Parse(Console.ReadLine());
+            int sizeOfMatrix = int.Parse(Console.ReadLine());
 
-            int[,] matrix = new int[n, n];
-
-            int firstDiagonal = 0;
-            int secondDiagonal = 0;
+            int[,] matrix = new int[sizeOfMatrix, sizeOfMatrix];
 
             for (int row = 0; row < matrix.GetLength(0); row++)
             {
@@ -24,24 +21,32 @@ namespace _1._Diagonal_Difference
                 }
             }
 
-            for (int i = 0; i < n; i++)
+            int firstDiagonalSum = 0;
+            int secondDiagonalSum = 0;
+
+            for (int row = 0; row < matrix.GetLength(0); row++)
             {
-                firstDiagonal += matrix[i, i];
+                for (int col = 0; col < matrix.GetLength(1); col++)
+                {
+                    if (row == col)
+                    {
+                        firstDiagonalSum += matrix[row, col];
+                    }
+                }
             }
 
-            for (int i = 0; i < n; i++)
+            int currentRow = 0;
+            int currentCol = sizeOfMatrix - 1;
+
+            while (currentCol >= 0)
             {
-                secondDiagonal += matrix[i, n - 1 - i];
+                secondDiagonalSum += matrix[currentRow, currentCol];
+
+                currentRow++;
+                currentCol--;
             }
 
-            if (firstDiagonal >= secondDiagonal)
-            {
-                Console.WriteLine(firstDiagonal - secondDiagonal);
-            }
-            else
-            {
-                Console.WriteLine(secondDiagonal - firstDiagonal);
-            }
+            Console.WriteLine(Math.Abs(firstDiagonalSum - secondDiagonalSum));
         }
     }
 }
