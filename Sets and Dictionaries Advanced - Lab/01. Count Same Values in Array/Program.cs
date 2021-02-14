@@ -8,25 +8,23 @@ namespace _01._Count_Same_Values_in_Array
     {
         static void Main(string[] args)
         {
-            double[] input = Console.ReadLine().Split().Select(double.Parse).ToArray();
+            double[] numbers = Console.ReadLine().Split().Select(double.Parse).ToArray();
 
-            Dictionary<double, int> dictionary = new Dictionary<double, int>();
+            Dictionary<double, int> dataBase = new Dictionary<double, int>();
 
-            foreach (double number in input)
+            foreach (double num in numbers)
             {
-                if (dictionary.ContainsKey(number))
+                if (!dataBase.ContainsKey(num))
                 {
-                    dictionary[number]++;
+                    dataBase.Add(num, 0);
                 }
-                else
-                {
-                    dictionary.Add(number, 1);
-                }
+
+                dataBase[num]++;
             }
 
-            foreach (var item in dictionary)
+            foreach (var item in dataBase)
             {
-                Console.WriteLine($"{ item.Key} - { item.Value} times");
+                Console.WriteLine($"{item.Key} - {item.Value} times");
             }
         }
     }
