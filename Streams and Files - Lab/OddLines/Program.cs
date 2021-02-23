@@ -7,7 +7,7 @@ namespace OddLines
     {
         static void Main(string[] args)
         {
-            using (StreamReader reader = new StreamReader(@"C: \Users\danie\Desktop\New folder\Resources\01.Odd Lines"))
+            using (StreamReader reader = new StreamReader(@"C:\Users\danie\Desktop\New folder\Resources\01. Odd Lines\Input.txt"))
             {
                 int row = 0;
                 string currentRow = reader.ReadLine();
