@@ -11,6 +11,13 @@ namespace ActionPrint
         static void Main(string[] args)
         {
             string[] input = Console.ReadLine().Split();
+
+            Action<string> printer = x => Console.WriteLine(x);
+
+            foreach (string name in input)
+            {
+                printer(name);
+            }
         }
     }
 }
