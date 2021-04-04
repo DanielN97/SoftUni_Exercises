@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Operations
 {
-    public class Operations
+    public class MathOperations
     {
         public int Add(int a, int b)
         {
