@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31129.286
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vehicles", "Vehicles\Vehicles.csproj", "{D0778582-C8A3-46B7-B16A-73A329EAC765}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Raiding", "Raiding\Raiding.csproj", "{50FD22E2-4D07-4C12-AE32-F939962CBE8F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WildFarm", "WildFarm\WildFarm.csproj", "{86F520AC-A238-4E0B-B890-B75B3F7FED45}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D0778582-C8A3-46B7-B16A-73A329EAC765}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0778582-C8A3-46B7-B16A-73A329EAC765}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0778582-C8A3-46B7-B16A-73A329EAC765}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0778582-C8A3-46B7-B16A-73A329EAC765}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50FD22E2-4D07-4C12-AE32-F939962CBE8F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50FD22E2-4D07-4C12-AE32-F939962CBE8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50FD22E2-4D07-4C12-AE32-F939962CBE8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50FD22E2-4D07-4C12-AE32-F939962CBE8F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86F520AC-A238-4E0B-B890-B75B3F7FED45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86F520AC-A238-4E0B-B890-B75B3F7FED45}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86F520AC-A238-4E0B-B890-B75B3F7FED45}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86F520AC-A238-4E0B-B890-B75B3F7FED45}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {45532084-524A-4396-87B0-355A185BA442}
+	EndGlobalSection
+EndGlobal
