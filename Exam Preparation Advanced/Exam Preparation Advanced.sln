@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31129.286
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlowerWreaths", "FlowerWreaths\FlowerWreaths.csproj", "{24E6A9DC-0543-4870-AB1F-F923D493F191}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bee", "Bee\Bee.csproj", "{164C4834-2112-4D66-9AFA-10B4DF2849D3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VetClinic", "VetClinic\VetClinic.csproj", "{E9A7C26A-ED18-4A8C-9616-628E1F1AA377}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{24E6A9DC-0543-4870-AB1F-F923D493F191}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24E6A9DC-0543-4870-AB1F-F923D493F191}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24E6A9DC-0543-4870-AB1F-F923D493F191}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24E6A9DC-0543-4870-AB1F-F923D493F191}.Release|Any CPU.Build.0 = Release|Any CPU
+		{164C4834-2112-4D66-9AFA-10B4DF2849D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{164C4834-2112-4D66-9AFA-10B4DF2849D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{164C4834-2112-4D66-9AFA-10B4DF2849D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{164C4834-2112-4D66-9AFA-10B4DF2849D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E9A7C26A-ED18-4A8C-9616-628E1F1AA377}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9A7C26A-ED18-4A8C-9616-628E1F1AA377}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9A7C26A-ED18-4A8C-9616-628E1F1AA377}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9A7C26A-ED18-4A8C-9616-628E1F1AA377}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E30D4F0B-5BB2-455E-A94F-EFAFB7E8B3E7}
+	EndGlobalSection
+EndGlobal
