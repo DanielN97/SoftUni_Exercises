@@ -23,7 +23,33 @@ namespace Stealer
 
             foreach (var field in allFields.Where(x => fields.Contains(x.Name)))
             {
-                sb.AppendLine($"{field} = {field.GetValue(classInstance)}");
+                sb.AppendLine($"{field.Name} = {field.GetValue(classInstance)}");
+            }
+
+            return sb.ToString().TrimEnd();
+        }
+
+        public string AnalyzeAccessModifiers(string className)
+        {
+            Type type = Type.GetType(className);
+
+            FieldInfo[] fields = type.GetFields(BindingFlags.Instance| BindingFlags.Static| BindingFlags.Public);
+            MethodInfo[] publicMethods = type.GetMethods(BindingFlags.Instance| BindingFlags.Public);
+            MethodInfo[] nonPublicMethods = type.GetMethods(BindingFlags.Instance | BindingFlags.NonPublic);
+
+            StringBuilder sb = new StringBuilder();
+
+            foreach (FieldInfo field in fields)
+            {
+                sb.AppendLine($"{field.Name} must be private!");
+            }
+            foreach (MethodInfo method in nonPublicMethods.Where(x => x.Name.StartsWith("get")))
+            {
+                sb.AppendLine($"{method.Name} have to be public!");
+            }
+            foreach (MethodInfo method in publicMethods.Where(x => x.Name.StartsWith("set")))
+            {
+                sb.AppendLine($"{method.Name} have to be private!");
             }
 
             return sb.ToString().TrimEnd();
